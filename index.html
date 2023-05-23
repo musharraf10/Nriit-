@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MRF</title>
+    <link rel="stylesheet" type="text/css" href="\index.css">
+    <link rel="stylesheet" type="text/css" href="\login.css">
+</head>
+<body>
+  <div class="slideshow">
+    <img src="https://st2.depositphotos.com/3662505/6878/i/950/depositphotos_68789187-stock-photo-students.jpg" alt="Image 1">
+    <img src="https://www.shutterstock.com/image-photo/portrait-cheerful-male-international-indian-260nw-2071252046.jpg" alt="Image 2">
+   
+</div>
+<script>
+  var slideIndex = 0;
+  showSlides();
+
+  function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("slideshow")[0].getElementsByTagName("img");
+    
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    
+    slideIndex++;
+    
+    if (slideIndex > slides.length) {
+      slideIndex = 1;
+    }
+    
+    slides[slideIndex - 1].style.display = "block";
+    
+    setTimeout(showSlides, 10000);
+  }
+</script>
+    <section class="sec1">
+      <div class="top-bar">
+
+      </div>
+        <div class="nav-bar">
+            <a href="#">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">Results 
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                  <a href="#">1-1</a>
+                  <a href="#">1-2</a>
+                  <a href="#">2-1</a>
+                  <a href="#">2-2</a>
+                  <a href="#">3-1</a>
+                  <a href="#">3-2</a>
+                  <a href="#">4-1</a>
+                  <a href="#">4-2</a>
+                </div>
+              </div>
+              <div class="dropdown">
+                <button class="dropbtn">A-Year
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                  <a href="#">2019</a>
+                  <a href="#">2020</a>
+                  <a href="#">2021</a>
+                  <a href="#">2022</a>
+                  <a href="#">2023</a>
+                </div>
+              </div>
+              <div class="dropdown">
+                <button class="dropbtn">Branch
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                  <a href="#">IT</a>
+                  <a href="#">DS</a>
+                </div>
+              </div>
+            <div class="dropdown">
+              <button id="loginButton" onclick="login()" class="dropbtn">Login
+                <i class="fa fa-caret-down"></i>
+              </button>
+            </div>
+            <a href="#">Contact</a>
+            <div class="Main-Bar">
+           <input type="password" id="Input-Password" placeholder="Enter password" >
+           <span id="eye" onclick="toggle()" class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+           <button onclick="checkpassword()" class="btn1">Go</button>
+           </div>
+        </div>
+       <script>
+        var pwd = "123";
+        const mainHeader = document.querySelector('.top-bar');
+        const navbar = document.querySelector('.nav-bar');
+         function checkpassword(){
+            var input_pass = document.getElementById('Input-Password').value;
+                if(input_pass == pwd){
+                    mainHeader.style.display='block';
+                    navbar.style.top=52+"px";
+                }else{
+                    mainHeader.style.display='none';
+                    navbar.style.top=0+"px";
+                }
+           }
+       </script>
+       <script>
+        var state=false;
+        function toggle(){
+            if(state)
+            {
+                document.getElementById("Input-Password").setAttribute("type","password");
+                document.getElementById("eye").style.color="#000";
+                state=false;
+            }
+            else
+            {
+                document.getElementById("Input-Password").setAttribute("type","text");
+                document.getElementById("eye").style.color="#5887ef";
+                state=true;
+            }
+        }
+      </script>
+    </section>
+
+    <section class="sec2" id="loginButton1">
+      <div class="wrapper">
+        <a href="#" ><span class="icon-close"><ion-icon name="close-outline"></ion-icon></span></a>
+        <div class="form-box login">
+            <h3>Login</h3>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                    <input type="text" name="rollno" required>
+                    <label>Roll Number</label>
+                </div>
+                <div class="input-box">
+                    <span id="eye3" onclick="toggle3()" class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                    <input type="password" name="passwd" id="passwd3" required>
+                    <label>Password?</label>
+                </div>
+                
+                <div class="remember-forgot">
+                    <label><input type="checkbox">Remember Me</label>
+                    <a href="\Forget.html">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn">Login</button>
+                <div class="login-register">
+                    <p>Don't Have an account?<a href="#"class="register-link">Register</a></p>
+                </div>
+            </form>
+        </div>
+        <div class="form-box register">
+          <h3>Registration</h3>
+          <form action="#">
+              <div class="input-box">
+                  <span class="icon"><ion-icon name="person-outline"></ion-icon></ion-icon></span>
+                  <input type="text" required>
+                  <label>Full name</label>
+              </div>
+              <div class="input-box">
+                  <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                  <input type="text" required>
+                  <label>Roll Number</label>
+              </div>
+              <div class="input-box">
+                  <span id="eye1" onclick="toggle1()" class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                  <input id="passwd1" type="password" required >
+                  <label>Password</label>
+              </div>
+              <div class="input-box">
+                  <span id="eye2" onclick="toggle2()" class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                  <input  id="passwd2" type="password" required >
+                  <label>Confirm Password</label>
+              </div>
+              <div class="remember-forgot">
+                  <label><input type="checkbox">I agree to the terms & conditions</label>
+              </div>
+              <button type="submit" class="btn">Register</button>
+              <div class="login-register">
+                  <p>Already have an account?<a href="#" class="login-link">Login</a></p>
+              </div>
+          </form>
+      </div>
+    </div>
+    <script>
+            const wrapper  = document.querySelector('.wrapper');
+            const loginlink  = document.querySelector('.login-link');
+            const registerlink  = document.querySelector('.register-link');
+            registerlink.addEventListener('click',()=>{
+            wrapper.classList.add('active');
+            });
+
+            loginlink.addEventListener('click',()=>{
+            wrapper.classList.remove('active');
+            });
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        var state=false;
+        function toggle1(){
+            if(state)
+            {
+                document.getElementById("passwd1").setAttribute("type","password");
+                document.getElementById("eye1").style.color="#fff";
+                state=false;
+            }
+            else
+            {
+                document.getElementById("passwd1").setAttribute("type","text");
+                document.getElementById("eye1").style.color="#5887ef";
+                state=true;
+            }
+        }
+      </script>
+      <script>
+        var state=false;
+        function toggle2(){
+            if(state)
+            {
+                document.getElementById("passwd2").setAttribute("type","password");
+                document.getElementById("eye2").style.color="#fff";
+                state=false;
+            }
+            else
+            {
+                document.getElementById("passwd2").setAttribute("type","text");
+                document.getElementById("eye2").style.color="#5887ef";
+                state=true;
+            }
+        }
+      </script>
+      <script>
+        var state=false;
+        function toggle3(){
+            if(state)
+            {
+                document.getElementById("passwd3").setAttribute("type","password");
+                document.getElementById("eye3").style.color="#fff";
+                state=false;
+            }
+            else
+            {
+                document.getElementById("passwd3").setAttribute("type","text");
+                document.getElementById("eye3").style.color="#5887ef";
+                state=true;
+            }
+        }
+      </script>
+
+      <script>
+      setTimeout(function() {
+      var loginForm = document.getElementById("loginButton1");
+      loginForm.style.display = "block";
+      }, 30000);
+
+        function login()
+        {
+          var loginForm = document.getElementById("loginButton1");
+          if (loginForm.style.display === "none") {
+            loginForm.style.display = "block";
+      }   else {
+            loginForm.style.display = "none";
+      }
+    }
+      </script>
+
+    </section>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  
+</body>
+</html>
